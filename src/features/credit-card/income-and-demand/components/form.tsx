@@ -10,12 +10,12 @@ import { Form } from '@/components/ui/form'
 import FormCombobox from '@/components/ui/form-combobox'
 import FormInput from '@/components/ui/form-input'
 import FormMultipleCheckbox from '@/components/ui/form-multiple-checkbox'
-import { demands } from '@/features/income-and-demand/constants/demand.constant'
-import { income } from '@/features/income-and-demand/constants/income.constant'
+import { demands } from '@/features/credit-card/income-and-demand/constants/demand.constant'
+import { income } from '@/features/credit-card/income-and-demand/constants/income.constant'
 import {
 	incomeAndDemand,
 	IncomeAndDemandSchema
-} from '@/features/income-and-demand/schemas/income-and-demand.schema'
+} from '@/features/credit-card/income-and-demand/schemas/income-and-demand.schema'
 import { useClient } from '@/stores/client.store'
 
 const IncomeAndDemandForm = () => {
@@ -44,7 +44,7 @@ const IncomeAndDemandForm = () => {
 		onSuccess: data => {
 			setClient({ ...client, ...data })
 
-			router.push('/papers')
+			router.push('/credit-card/product')
 		}
 	})
 

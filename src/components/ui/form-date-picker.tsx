@@ -15,7 +15,7 @@ interface FormDatepickerProps {
 	name: string
 	label?: string
 	isLoading?: boolean
-	isMessage?: boolean
+	isFormMessage?: boolean
 }
 
 const FormDatepicker: FC<FormDatepickerProps> = ({
@@ -23,7 +23,7 @@ const FormDatepicker: FC<FormDatepickerProps> = ({
 	name,
 	label,
 	isLoading,
-	isMessage
+	isFormMessage
 }) => {
 	return (
 		<FormField
@@ -42,7 +42,7 @@ const FormDatepicker: FC<FormDatepickerProps> = ({
 							onChange={field.onChange}
 						/>
 					</FormControl>
-					{isMessage && <FormMessage />}
+					{isFormMessage && <FormMessage />}
 				</FormItem>
 			)}
 		/>

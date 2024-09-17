@@ -11,7 +11,7 @@ import { cn } from '@/lib/utils'
 
 type FormWrapperProps = PropsWithChildren<{
 	title: string
-	description: string
+	description?: string
 }>
 
 const FormWrapper: FC<FormWrapperProps> = ({

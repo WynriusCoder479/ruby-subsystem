@@ -1,5 +1,5 @@
 import FormWrapper from '@/components/common/form-wrapper'
-import CommonInfoForm from '@/features/common-info/components/form'
+import CommonInfoForm from '@/features/credit-card/common-info/components/form'
 
 const CommonInfoScreen = () => {
 	return (

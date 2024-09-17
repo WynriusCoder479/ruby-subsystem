@@ -12,11 +12,11 @@ import { Form } from '@/components/ui/form'
 import FormCombobox from '@/components/ui/form-combobox'
 import FormDatepicker from '@/components/ui/form-date-picker'
 import FormInput from '@/components/ui/form-input'
-import { cities } from '@/features/common-info/constants/cities.constant'
+import { cities } from '@/features/credit-card/common-info/constants/cities.constant'
 import {
 	CommonInfoSchema,
 	commonInfoSchema
-} from '@/features/common-info/schemas/common-info.schema'
+} from '@/features/credit-card/common-info/schemas/common-info.schema'
 import { calculateAge } from '@/lib/utils'
 import { useClient } from '@/stores/client.store'
 
@@ -52,10 +52,10 @@ const CommonInfoForm = () => {
 		onSuccess: data => {
 			setClient({ ...client, ...data })
 
-			router.push('/income-and-demand')
+			router.push('/credit-card/income-and-demand')
 		},
 		onError: () => {
-			router.push('/non-qualified')
+			router.push('/credit-card/non-qualified')
 		}
 	})
 
@@ -79,7 +79,7 @@ const CommonInfoForm = () => {
 						isLoading={isPending}
 						control={form.control}
 						name="dob"
-						isMessage
+						isFormMessage
 					/>
 					<FormInput
 						name="email"
@@ -87,6 +87,13 @@ const CommonInfoForm = () => {
 						control={form.control}
 						isFormMessage
 						label="Email"
+					/>
+					<FormInput
+						name="phone"
+						isLoading={isPending}
+						control={form.control}
+						isFormMessage
+						label="Số điện thoại"
 					/>
 					<FormCombobox
 						name="city"
@@ -120,7 +127,7 @@ const CommonInfoForm = () => {
 						</div>
 					</div>
 					<Button
-						type={'submit'}
+						type="submit"
 						className="mt-4 w-full"
 						disabled={!checked}
 					>

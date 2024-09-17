@@ -1,5 +1,5 @@
 import FormWrapper from '@/components/common/form-wrapper'
-import IncomeAndDemandForm from '@/features/income-and-demand/components/form'
+import IncomeAndDemandForm from '@/features/credit-card/income-and-demand/components/form'
 
 const IncomeAndDemandScreen = () => {
 	return (

@@ -48,7 +48,7 @@ const FormMultipleCheckbox: FC<FormMultipleCheckboxProps> = ({
 							Select the items you want to display in the sidebar.
 						</FormDescription>
 					</div>
-					<div className="space-y-2 rounded-md border border-foreground/30 p-2.5">
+					<div className="max-h-[500px] space-y-4 overflow-y-scroll rounded-md border border-foreground/30 p-2.5">
 						{items.map(item => (
 							<FormField
 								key={item.value}
@@ -58,7 +58,7 @@ const FormMultipleCheckbox: FC<FormMultipleCheckboxProps> = ({
 									return (
 										<FormItem
 											key={item.value}
-											className="flex flex-row items-start space-x-3 space-y-0"
+											className="flex flex-row items-start space-x-2 space-y-0"
 										>
 											<FormControl>
 												<Checkbox

@@ -1,10 +1,12 @@
 import { create } from 'zustand'
 
-import { CommonInfoSchema } from '@/features/common-info/schemas/common-info.schema'
-import { IncomeAndDemandSchema } from '@/features/income-and-demand/schemas/income-and-demand.schema'
+import { CommonInfoSchema } from '@/features/credit-card/common-info/schemas/common-info.schema'
+import { IncomeAndDemandSchema } from '@/features/credit-card/income-and-demand/schemas/income-and-demand.schema'
+import { PapersSchema } from '@/features/credit-card/papers/schemas/papers.schema'
 
 type Client = CommonInfoSchema &
-	Omit<IncomeAndDemandSchema, 'otherDemand'> & {
+	Omit<IncomeAndDemandSchema, 'otherDemand'> &
+	Omit<PapersSchema, 'otherPapers'> & {
 		age: number
 	}
 
@@ -22,7 +24,8 @@ export const useClient = create<UseClientStore>()(set => ({
 		phone: '',
 		city: '',
 		income: '',
-		demands: []
+		demands: [],
+		papers: []
 	},
 	setClient: client => set(state => ({ ...state, client }))
 }))
