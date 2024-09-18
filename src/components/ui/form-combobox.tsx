@@ -70,7 +70,7 @@ const FormCombobox: FC<FormComboboxProps> = ({
 									variant="outline"
 									role="combobox"
 									className={cn(
-										'w-full justify-between border border-foreground/30',
+										'w-full justify-between border border-foreground/30 bg-transparent',
 										!field.value && 'text-muted-foreground'
 									)}
 								>

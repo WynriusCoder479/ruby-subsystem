@@ -20,7 +20,7 @@ const FormWrapper: FC<FormWrapperProps> = ({
 	description
 }) => {
 	return (
-		<Card className="w-[420px]">
+		<Card className="w-[420px] border-none shadow-none">
 			<CardHeader>
 				<CardTitle>{title}</CardTitle>
 				<CardDescription

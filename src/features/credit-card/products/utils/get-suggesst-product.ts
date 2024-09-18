@@ -16,9 +16,7 @@ export const getSuggestProducts = (client: Client) => {
 			product.condition.cities === 'all' ||
 			product.condition.cities.includes(client.city)
 
-		const isIncomeMatch =
-			product.condition.income >= minIncome &&
-			product.condition.income <= maxIncome
+		const isIncomeMatch = product.condition.income <= maxIncome
 
 		const isDemandsMatch = client.demands.includes(product.condition.demands)
 
