@@ -41,7 +41,7 @@ const PapersForm = () => {
 		onSuccess: data => {
 			setClient({ ...client, ...data })
 
-			router.push('/credit-card/papers')
+			router.push('/products')
 		}
 	})
 

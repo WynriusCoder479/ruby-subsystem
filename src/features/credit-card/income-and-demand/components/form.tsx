@@ -44,7 +44,7 @@ const IncomeAndDemandForm = () => {
 		onSuccess: data => {
 			setClient({ ...client, ...data })
 
-			router.push('/credit-card/product')
+			router.push('/credit-card/papers')
 		}
 	})
 

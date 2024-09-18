@@ -1,21 +1,25 @@
-import Link from 'next/link'
+'use client'
 
-import FormWrapper from '@/components/common/form-wrapper'
-import { Button } from '@/components/ui/button'
+import { useSearchParams } from 'next/navigation'
+import { useEffect } from 'react'
+
+import { usePublisher } from '@/stores/publisher.store'
+import { useRouter } from 'next/navigation'
 
 const HomePage = () => {
-	return (
-		<FormWrapper title="RUBY">
-			<div className="flex w-full items-center justify-center">
-				<Button
-					asChild
-					className="w-full"
-				>
-					<Link href="/credit-card/common-info">Mở thẻ ngay</Link>
-				</Button>
-			</div>
-		</FormWrapper>
-	)
+	const searchParams = useSearchParams()
+
+	const router = useRouter()
+
+	const { setCode } = usePublisher()
+
+	useEffect(() => {
+		setCode(searchParams.get('code') ?? 'RUBY00000')
+
+		router.push('/credit-card/common-info')
+	}, [searchParams, setCode])
+
+	return null
 }
 
 export default HomePage

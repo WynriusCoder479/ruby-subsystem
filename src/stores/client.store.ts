@@ -4,13 +4,13 @@ import { CommonInfoSchema } from '@/features/credit-card/common-info/schemas/com
 import { IncomeAndDemandSchema } from '@/features/credit-card/income-and-demand/schemas/income-and-demand.schema'
 import { PapersSchema } from '@/features/credit-card/papers/schemas/papers.schema'
 
-type Client = CommonInfoSchema &
+export type Client = CommonInfoSchema &
 	Omit<IncomeAndDemandSchema, 'otherDemand'> &
 	Omit<PapersSchema, 'otherPapers'> & {
 		age: number
 	}
 
-interface UseClientStore {
+export interface UseClientStore {
 	client: Client
 	setClient: (client: Client) => void
 }
