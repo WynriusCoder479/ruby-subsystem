@@ -59,7 +59,7 @@ const IncomeAndDemandForm = () => {
 						isLoading={isPending}
 						control={form.control}
 						form={form}
-						initalData="Thu nhập"
+						initalData=""
 						items={income}
 						isMessage
 						label="Thu nhập cá nhân"

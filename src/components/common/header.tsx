@@ -10,7 +10,7 @@ const Header = () => {
 					alt="logo"
 					width={3336}
 					height={1144}
-					className="w-40"
+					className="w-36"
 				/>
 			</div>
 		</div>

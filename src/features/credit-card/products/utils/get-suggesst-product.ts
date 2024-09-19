@@ -9,8 +9,6 @@ export const getSuggestProducts = (client: Client) => {
 	const minIncome = incomeRange[0]
 	const maxIncome = incomeRange[1] || minIncome
 
-	console.log(incomeRange)
-
 	return products.filter(product => {
 		const isCityMatch =
 			product.condition.cities === 'all' ||

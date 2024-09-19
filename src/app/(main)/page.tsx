@@ -1,10 +1,9 @@
 'use client'
 
-import { useSearchParams } from 'next/navigation'
+import { useRouter, useSearchParams } from 'next/navigation'
 import { useEffect } from 'react'
 
 import { usePublisher } from '@/stores/publisher.store'
-import { useRouter } from 'next/navigation'
 
 const HomePage = () => {
 	const searchParams = useSearchParams()

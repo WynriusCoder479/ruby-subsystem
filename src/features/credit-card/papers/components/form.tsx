@@ -5,6 +5,7 @@ import { useMutation } from '@tanstack/react-query'
 import { useRouter } from 'next/navigation'
 import { useForm } from 'react-hook-form'
 
+import { addClient } from '@/actions/client/add'
 import { Button } from '@/components/ui/button'
 import { Form } from '@/components/ui/form'
 import FormInput from '@/components/ui/form-input'
@@ -38,8 +39,13 @@ const PapersForm = () => {
 				papers: [...values.papers, values.otherPapers as string]
 			}
 		},
-		onSuccess: data => {
+		onSuccess: async data => {
 			setClient({ ...client, ...data })
+
+			await addClient({
+				...client,
+				...data
+			})
 
 			router.push('/credit-card/products')
 		}
