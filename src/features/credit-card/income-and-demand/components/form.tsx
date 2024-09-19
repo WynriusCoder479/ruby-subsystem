@@ -17,6 +17,7 @@ import {
 	IncomeAndDemandSchema
 } from '@/features/credit-card/income-and-demand/schemas/income-and-demand.schema'
 import { useClient } from '@/stores/client.store'
+import { useReject } from '@/stores/reject.store'
 
 const IncomeAndDemandForm = () => {
 	const form = useForm<IncomeAndDemandSchema>({
@@ -31,6 +32,7 @@ const IncomeAndDemandForm = () => {
 	const router = useRouter()
 
 	const { client, setClient } = useClient()
+	const { setReject } = useReject()
 
 	const { mutate, isPending } = useMutation({
 		mutationFn: async (
@@ -51,6 +53,7 @@ const IncomeAndDemandForm = () => {
 			router.push('/credit-card/papers')
 		},
 		onError: () => {
+			setReject(true)
 			router.push('/credit-card/non-qualified')
 		}
 	})

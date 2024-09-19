@@ -20,6 +20,7 @@ import {
 } from '@/features/credit-card/common-info/schemas/common-info.schema'
 import { calculateAge } from '@/lib/utils'
 import { useClient } from '@/stores/client.store'
+import { useReject } from '@/stores/reject.store'
 
 const CommonInfoForm = () => {
 	const form = useForm<CommonInfoSchema>({
@@ -36,6 +37,7 @@ const CommonInfoForm = () => {
 	const [checked, setChecked] = useState<boolean>(false)
 
 	const { client, setClient } = useClient()
+	const { setReject } = useReject()
 
 	const router = useRouter()
 
@@ -56,6 +58,7 @@ const CommonInfoForm = () => {
 			router.push('/credit-card/income-and-demand')
 		},
 		onError: () => {
+			setReject(true)
 			router.push('/credit-card/non-qualified')
 		}
 	})
