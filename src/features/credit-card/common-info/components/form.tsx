@@ -12,6 +12,7 @@ import { Form } from '@/components/ui/form'
 import FormCombobox from '@/components/ui/form-combobox'
 import FormDatepicker from '@/components/ui/form-date-picker'
 import FormInput from '@/components/ui/form-input'
+import Policy from '@/features/credit-card/common-info/components/policy'
 import { cities } from '@/features/credit-card/common-info/constants/cities.constant'
 import {
 	CommonInfoSchema,
@@ -121,11 +122,11 @@ const CommonInfoForm = () => {
 							>
 								Đồng ý với điểu khoản của chúng tôi.
 							</label>
-							<p className="text-sm text-muted-foreground">
-								You agree to our Terms of Service and Privacy Policy.
-							</p>
 						</div>
 					</div>
+
+					<Policy />
+
 					<Button
 						type="submit"
 						className="mt-4 w-full"
