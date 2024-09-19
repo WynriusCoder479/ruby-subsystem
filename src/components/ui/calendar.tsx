@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 'use client'
 
-import { ChevronLeftIcon, ChevronRightIcon } from '@radix-ui/react-icons'
+import { ChevronLeft, ChevronRight } from 'lucide-react'
 import * as React from 'react'
 import { DayPicker } from 'react-day-picker'
 
@@ -61,8 +61,12 @@ function Calendar({
 				...classNames
 			}}
 			components={{
-				IconLeft: ({ ...props }) => <ChevronLeftIcon className="h-4 w-4" />,
-				IconRight: ({ ...props }) => <ChevronRightIcon className="h-4 w-4" />
+				Chevron: ({ ...props }) =>
+					props.orientation === 'left' ? (
+						<ChevronLeft className="h-4 w-4" />
+					) : (
+						<ChevronRight className="h-4 w-4" />
+					)
 			}}
 			{...props}
 		/>
