@@ -1,22 +1,26 @@
 'use client'
 
-import { useRouter, useSearchParams } from 'next/navigation'
-import { useEffect } from 'react'
+import { useRouter } from 'next/navigation'
+import { FC, useEffect } from 'react'
 
 import { usePublisher } from '@/stores/publisher.store'
 
-const HomePage = () => {
-	const searchParams = useSearchParams()
+interface HomePageProps {
+	searchParams: {
+		code: string
+	}
+}
 
+const HomePage: FC<HomePageProps> = ({ searchParams: { code } }) => {
 	const router = useRouter()
 
 	const { setCode } = usePublisher()
 
 	useEffect(() => {
-		setCode(searchParams.get('code') ?? 'RUBY00000')
+		setCode(code ?? 'RUBY000001')
 
 		router.push('/credit-card/common-info')
-	}, [searchParams, setCode])
+	}, [code, router, setCode])
 
 	return null
 }
