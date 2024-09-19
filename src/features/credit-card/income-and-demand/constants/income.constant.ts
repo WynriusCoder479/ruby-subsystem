@@ -3,7 +3,7 @@ import { ComboboxItemType } from '@/lib/types'
 export const income = [
 	{
 		label: 'Dưới 4.500.000 VND',
-		value: '4.500.000'
+		value: '4.100.000'
 	},
 	{
 		label: 'Từ 4.500.000 VND đến 7.000.000 VND',

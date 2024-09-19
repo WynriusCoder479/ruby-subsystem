@@ -36,6 +36,10 @@ const IncomeAndDemandForm = () => {
 		mutationFn: async (
 			values: IncomeAndDemandSchema
 		): Promise<Omit<IncomeAndDemandSchema, 'otherDemand'>> => {
+			const parseIncome = parseInt(values.income.split('.').join(''))
+
+			if (parseIncome < 4500000) throw Error('No product')
+
 			return {
 				...values,
 				demands: [...values.demands, values.otherDemand as string]
@@ -45,6 +49,9 @@ const IncomeAndDemandForm = () => {
 			setClient({ ...client, ...data })
 
 			router.push('/credit-card/papers')
+		},
+		onError: () => {
+			router.push('/credit-card/non-qualified')
 		}
 	})
 
