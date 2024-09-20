@@ -6,7 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 
 const NonQualifiedPage = () => {
 	return (
-		<Card className="w-[400px] border border-foreground/40 shadow-2xl">
+		<Card className="w-[400px] border border-foreground/20 shadow-2xl">
 			<CardHeader>
 				<CardTitle className="text-center text-2xl uppercase">
 					Tiếp nhận thông tin
@@ -39,7 +39,7 @@ const NonQualifiedPage = () => {
 						</Link>
 					</Button>
 					<div className="mt-4 w-full">
-						<p className="text-center text-sm opacity-70">
+						<p className="text-center text-xs opacity-70">
 							Công ty TNHH Tiếp thị và Truyền thông RUBY
 						</p>
 					</div>
