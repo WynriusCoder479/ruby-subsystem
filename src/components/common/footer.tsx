@@ -90,7 +90,7 @@ const Footer = () => {
 				</div>
 			</div>
 			<div className="p-2 text-sm font-bold tracking-tight">
-				<p className="bg-gradient-to-r from-primary to-[#1CA7EC] bg-clip-text">
+				<p className="text-foreground">
 					Copyright © RUBY Agency., Ltd, all right reserved.
 				</p>
 			</div>

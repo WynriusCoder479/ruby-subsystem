@@ -3,7 +3,7 @@ import { FC, PropsWithChildren } from 'react'
 
 const MainLayout: FC<PropsWithChildren> = ({ children }) => {
 	return (
-		<div className="relative flex h-full w-full justify-center py-6">
+		<div className="relative flex h-full w-[400px] justify-center py-6">
 			<div className="z-50 flex h-fit w-fit flex-col items-center rounded-2xl border-foreground/20 bg-background p-6 lg:border lg:shadow-xl">
 				<Image
 					src="/ruby-logo.png"
