@@ -100,7 +100,7 @@ const SecurityPolicy = () => {
 					variant="link"
 					className="p-0"
 				>
-					-Thông báo bảo mật của chúng tôi
+					- Thông báo bảo mật của chúng tôi
 				</Button>
 			}
 		>
