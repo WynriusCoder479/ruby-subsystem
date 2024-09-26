@@ -7,7 +7,6 @@ import { useEffect, useState } from 'react'
 
 import Footer from '@/components/common/footer'
 import { Button } from '@/components/ui/button'
-import { products } from '@/features/credit-card/products/constants/products.constant'
 import { CardType } from '@/features/credit-card/products/types/card.type'
 import { getSuggestProducts } from '@/features/credit-card/products/utils/get-suggesst-product'
 import { useClient } from '@/stores/client.store'
@@ -27,7 +26,7 @@ const ProductsPage = () => {
 
 	return (
 		<div className="flex w-[400px] flex-col items-center gap-2">
-			{products.map(product => (
+			{suggestProductList.map(product => (
 				<div
 					key={product.id}
 					className="flex h-fit w-96 gap-2 rounded-md border border-foreground/30 bg-background p-2 shadow-md"
