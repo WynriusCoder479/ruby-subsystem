@@ -14,7 +14,7 @@ export const addClient = async (client: Client, uid: string, code: string) => {
 		requestBody: {
 			values: [
 				[
-					uid,
+					`'${uid}`,
 					'',
 					'',
 					code,

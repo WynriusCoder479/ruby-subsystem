@@ -615,7 +615,6 @@ const TimePicker = React.forwardRef<TimePickerRef, TimePickerProps>(
 				/>
 				{(granularity === 'minute' || granularity === 'second') && (
 					<>
-						:
 						<TimePickerInput
 							picker="minutes"
 							date={date}
