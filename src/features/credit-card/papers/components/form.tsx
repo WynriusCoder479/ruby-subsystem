@@ -15,7 +15,10 @@ import {
 	PapersSchema,
 	papersSchema
 } from '@/features/credit-card/papers/schemas/papers.schema'
+import { generateRandomSubString } from '@/lib/gen-id'
 import { useClient } from '@/stores/client.store'
+import { usePublisher } from '@/stores/publisher.store'
+import { useUid } from '@/stores/uid.store'
 
 const PapersForm = () => {
 	const form = useForm<PapersSchema>({
@@ -25,6 +28,9 @@ const PapersForm = () => {
 			otherPapers: ''
 		}
 	})
+
+	const { code } = usePublisher()
+	const { setUid } = useUid()
 
 	const router = useRouter()
 
@@ -40,12 +46,19 @@ const PapersForm = () => {
 			}
 		},
 		onSuccess: async data => {
-			setClient({ ...client, ...data })
+			const uid = `${generateRandomSubString(6)}-${generateRandomSubString(12)}`
 
-			await addClient({
-				...client,
-				...data
-			})
+			setClient({ ...client, ...data })
+			setUid(uid)
+
+			await addClient(
+				{
+					...client,
+					...data
+				},
+				uid,
+				code
+			)
 
 			router.push('/credit-card/products')
 		}

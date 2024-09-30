@@ -1,11 +1,10 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 'use server'
-
-import { generate as genId } from 'otp-generator'
 
 import { getSheets } from '@/lib/google-sheets'
 import { Client } from '@/stores/client.store'
 
-export const addClient = async (client: Client) => {
+export const addClient = async (client: Client, uid: string, code: string) => {
 	const sheets = await getSheets()
 
 	await sheets.spreadsheets.values.append({
@@ -15,12 +14,10 @@ export const addClient = async (client: Client) => {
 		requestBody: {
 			values: [
 				[
-					`'${genId(5, {
-						digits: true,
-						lowerCaseAlphabets: false,
-						specialChars: false,
-						upperCaseAlphabets: false
-					})}`,
+					uid,
+					'',
+					'',
+					code,
 					client.fullname,
 					client.dob,
 					client.age,

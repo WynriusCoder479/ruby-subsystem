@@ -1,20 +1,23 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 'use client'
 
+import { useMutation } from '@tanstack/react-query'
 import Image from 'next/image'
-import Link from 'next/link'
 import { useEffect, useState } from 'react'
 
+import { addMoreData } from '@/actions/client/add-more'
 import Footer from '@/components/common/footer'
 import { Button } from '@/components/ui/button'
 import { CardType } from '@/features/credit-card/products/types/card.type'
 import { getSuggestProducts } from '@/features/credit-card/products/utils/get-suggesst-product'
 import { useClient } from '@/stores/client.store'
 import { usePublisher } from '@/stores/publisher.store'
+import { useUid } from '@/stores/uid.store'
 
 const ProductsPage = () => {
 	const { client } = useClient()
 	const { code } = usePublisher()
+	const { uid } = useUid()
 
 	const [suggestProductList, setSuggestProductList] = useState<CardType[]>([])
 
@@ -23,6 +26,28 @@ const ProductsPage = () => {
 
 		setSuggestProductList([...suggestProductList, ...productList])
 	}, [])
+
+	const { mutate } = useMutation({
+		mutationFn: async ({
+			uid,
+			product
+		}: {
+			uid: string
+			product: CardType
+		}) => {
+			const timestamp = Date.now()
+			const publisherCode = code.split('RUBY')[1]
+
+			const productCode = product.group === 'vp' ? 'vpbankcc' : product.id
+
+			await addMoreData(uid, timestamp, productCode)
+
+			return product.link(`${timestamp}-${publisherCode}-${productCode}-${uid}`)
+		},
+		onSuccess: data => {
+			window.open(data, '_blank')
+		}
+	})
 
 	return (
 		<div className="flex w-[400px] flex-col items-center gap-2">
@@ -57,15 +82,10 @@ const ProductsPage = () => {
 							</p>
 						</div>
 						<Button
-							asChild
 							className="w-full"
+							onClick={() => mutate({ uid, product })}
 						>
-							<Link
-								href={product.link(code)}
-								target="_blank"
-							>
-								Mở thẻ ngay
-							</Link>
+							Mở thẻ ngay
 						</Button>
 					</div>
 				</div>
