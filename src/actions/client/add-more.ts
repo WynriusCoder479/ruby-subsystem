@@ -30,7 +30,7 @@ export const addMoreData = async (
 
 		return [
 			id,
-			format(new Date(timestamp), 'QQQ E dd/LL/yyyy - hh:mm:ss bbb zzzz'),
+			format(new Date(timestamp), 'QQQ E dd/LL/yyyy - hh:mm:ss bbb'),
 			productCode,
 			...rest
 		]
