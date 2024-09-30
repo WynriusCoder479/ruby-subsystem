@@ -6,7 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 
 const NonQualifiedPage = () => {
 	return (
-		<Card className="w-[400px] border border-foreground/20 shadow-2xl">
+		<Card className="w-[380px] border-none border-transparent shadow-none">
 			<CardHeader>
 				<CardTitle className="text-center text-2xl uppercase">
 					Tiếp nhận thông tin

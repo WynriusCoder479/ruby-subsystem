@@ -1,6 +1,8 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 'use server'
 
+import { format } from 'date-fns'
+
 import { getSheets } from '@/lib/google-sheets'
 import { Client } from '@/stores/client.store'
 
@@ -19,7 +21,7 @@ export const addClient = async (client: Client, uid: string, code: string) => {
 					'',
 					code,
 					client.fullname,
-					client.dob,
+					format(new Date(client.dob), 'mm/LL/yyyy'),
 					client.age,
 					`'${client.phone}`,
 					client.email,

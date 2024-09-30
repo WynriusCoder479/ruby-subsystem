@@ -1,5 +1,7 @@
 'use server'
 
+import { format } from 'date-fns'
+
 import { getSheets } from '@/lib/google-sheets'
 
 export const addMoreData = async (
@@ -20,23 +22,18 @@ export const addMoreData = async (
 		throw Error('Internal server error')
 	}
 
-	const getDateFromTimestamp = (timestampInput: string | number) => {
-		const date = new Date(timestampInput)
-
-		const day = date.getDate().toString().padStart(2, '0')
-		const month = (date.getMonth() + 1).toString().padStart(2, '0')
-		const year = date.getFullYear()
-
-		return `${day}/${month}/${year}`
-	}
-
 	const data = [...values].map(value => {
 		if (value[0] !== uid) return value
 
 		const id = value[0]
 		const rest = value.slice(3)
 
-		return [id, getDateFromTimestamp(timestamp), productCode, ...rest]
+		return [
+			id,
+			format(new Date(timestamp), 'QQQ E dd/LL/yyyy - hh:mm:ss bbb zzzz'),
+			productCode,
+			...rest
+		]
 	})
 
 	await sheets.spreadsheets.values.update({

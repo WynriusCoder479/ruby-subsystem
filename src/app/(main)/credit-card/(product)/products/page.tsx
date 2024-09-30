@@ -3,6 +3,7 @@
 
 import { useMutation } from '@tanstack/react-query'
 import Image from 'next/image'
+import { useRouter } from 'next/navigation'
 import { useEffect, useState } from 'react'
 
 import { addMoreData } from '@/actions/client/add-more'
@@ -21,13 +22,25 @@ const ProductsPage = () => {
 
 	const [suggestProductList, setSuggestProductList] = useState<CardType[]>([])
 
+	const router = useRouter()
+
+	if (
+		client.fullname === '' ||
+		client.dob === '' ||
+		client.phone === '' ||
+		client.email === '' ||
+		client.city === ''
+	) {
+		router.push('/credit-card/non-qualified')
+	}
+
 	useEffect(() => {
 		const productList = getSuggestProducts(client)
 
 		setSuggestProductList([...suggestProductList, ...productList])
 	}, [])
 
-	const { mutate } = useMutation({
+	const { mutate, isPending } = useMutation({
 		mutationFn: async ({
 			uid,
 			product
@@ -45,7 +58,7 @@ const ProductsPage = () => {
 			return product.link(`${timestamp}-${publisherCode}-${productCode}-${uid}`)
 		},
 		onSuccess: data => {
-			window.open(data, '_blank')
+			router.push(data)
 		}
 	})
 
@@ -84,6 +97,7 @@ const ProductsPage = () => {
 						<Button
 							className="w-full"
 							onClick={() => mutate({ uid, product })}
+							disabled={isPending}
 						>
 							Mở thẻ ngay
 						</Button>
