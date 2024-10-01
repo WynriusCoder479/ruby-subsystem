@@ -8,7 +8,7 @@ import { getSheets } from '@/lib/google-sheets'
 
 export const addInfo = async (
 	uid: string,
-	client: CommonInfoSchema & { age: number },
+	client: CommonInfoSchema,
 	publisherCode: string,
 	productCode: string
 ) => {
@@ -30,7 +30,7 @@ export const addInfo = async (
 
 		const rest = value.splice(0, 4)
 
-		return [...rest, ...Object.values(client)]
+		return [...rest, '', ...Object.values(client)]
 	})
 
 	await sheets.spreadsheets.values.update({

@@ -18,7 +18,6 @@ import {
 	CommonInfoSchema,
 	commonInfoSchema
 } from '@/features/credit-card/common-info/schemas/common-info.schema'
-import { calculateAge } from '@/lib/utils'
 import { useUid } from '@/stores/uid.store'
 
 const CommonInfoForm = () => {
@@ -41,19 +40,10 @@ const CommonInfoForm = () => {
 
 	const { mutate, isPending } = useMutation({
 		mutationFn: async (values: CommonInfoSchema) => {
-			const clientAge = calculateAge(values.dob as string)
 			const product = searchParams.get('product')
 			const code = searchParams.get('code')
 
-			await addInfo(
-				uid,
-				{
-					age: clientAge,
-					...values
-				},
-				code ?? 'RUBY00001',
-				product ?? 'vpbankcc'
-			)
+			await addInfo(uid, values, code ?? 'RUBY00001', product ?? 'vpbankcc')
 		}
 	})
 
@@ -123,7 +113,7 @@ const CommonInfoForm = () => {
 						className="mt-4 w-full"
 						disabled={!checked}
 					>
-						Tiếp theo
+						Mở thẻ ngay
 					</Button>
 				</div>
 			</form>
