@@ -5,7 +5,7 @@ export const linkProduct = (code: string, type: string) => {
 		case 'vpbankcc':
 			link = `https://cards.vpbank.com.vn/?utm_campaign=JarvisCustCC.Partner&utm_source=FiMi&utm_medium=${code}`
 			break
-		case 'hdbvietjet':
+		case 'hdbvjp':
 			link = `https://hdbank.page.link/?link=https://hdbank.page.link/?channel=dop&productcode=DOPPLX&utm_source=FIMI&utm_campaign=test&utm_channel=DOP&utm_ref=${code}&apn=com.vnpay.hdbank&isi=1461658565&ibi=com.vnpay.HDBank`
 			break
 		case 'hdb4in1':
