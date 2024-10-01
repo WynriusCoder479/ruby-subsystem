@@ -21,7 +21,7 @@ export const addClient = async (client: Client, uid: string, code: string) => {
 					'',
 					code,
 					client.fullname,
-					format(new Date(client.dob), 'mm/LL/yyyy'),
+					format(new Date(client.dob), 'dd/LL/yyyy'),
 					client.age,
 					`'${client.phone}`,
 					client.email,

@@ -31,7 +31,7 @@ const ProductsPage = () => {
 		client.email === '' ||
 		client.city === ''
 	) {
-		router.push('/credit-card/non-qualified')
+		router.push('/credit-card/common-info')
 	}
 
 	useEffect(() => {
