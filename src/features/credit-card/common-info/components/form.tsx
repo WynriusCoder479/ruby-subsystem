@@ -11,7 +11,6 @@ import { Button } from '@/components/ui/button'
 import { Checkbox } from '@/components/ui/checkbox'
 import { Form } from '@/components/ui/form'
 import FormCombobox from '@/components/ui/form-combobox'
-import FormDatepicker from '@/components/ui/form-date-picker'
 import FormInput from '@/components/ui/form-input'
 import Policy from '@/features/credit-card/common-info/components/policy'
 import { cities } from '@/features/credit-card/common-info/constants/cities.constant'
@@ -73,13 +72,7 @@ const CommonInfoForm = () => {
 						isFormMessage
 						label="Họ và tên"
 					/>
-					<FormDatepicker
-						label="Ngày sinh"
-						isLoading={isPending}
-						control={form.control}
-						name="dob"
-						isFormMessage
-					/>
+
 					<FormInput
 						name="email"
 						isLoading={isPending}

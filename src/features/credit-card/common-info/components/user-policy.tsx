@@ -14,9 +14,9 @@ const UserPolicy = () => {
 				</Button>
 			}
 		>
-			<div className="flex flex-col gap-2 text-xs">
+			<div className="flex flex-col gap-2 text-justify text-xs">
 				<p>
-					FIMI chịu trách nhiệm quảng cáo và giới thiệu dịch vụ tài chính, bảo
+					RUBY chịu trách nhiệm quảng cáo và giới thiệu dịch vụ tài chính, bảo
 					hiểm, hàng hóa và dịch vụ khác của các đối tác đến Quý khách. Quý
 					khách vui lòng đọc các điều khoản dưới đây nhằm hiểu rõ hơn về mục
 					đích, phạm vi thông tin mà chúng tôi xử lý dữ liệu cá nhân và các biện
@@ -64,7 +64,7 @@ const UserPolicy = () => {
 						Điều 3. Thông tin về tổ chức, cá nhân được xử lí dữ liệu cá nhân:
 					</p>
 					<p>
-						FIMI, Các đối tác của FIMI, có thể bao gồm cơ quan nhà nước, các tổ
+						RUBY, Các đối tác của RUBY, có thể bao gồm cơ quan nhà nước, các tổ
 						chức đánh giá xếp hạng, đánh giá tín nhiệm, tổ chức cung cấp hạ tầng
 						và công nghệ thông tin, các tổ chức và cá nhân có liên quan khác,
 						được phép xử lý dữ liệu theo hợp đồng, thỏa thuận được thiết lập hợp
@@ -78,7 +78,7 @@ const UserPolicy = () => {
 					</p>
 					<p>
 						1. Phục vụ cho việc đăng ký sử dụng các sản phẩm, dịch vụ tài chính,
-						bảo hiểm, hàng hóa và dịch vụ khác tại các đối tác của FIMI.
+						bảo hiểm, hàng hóa và dịch vụ khác tại các đối tác của RUBY.
 					</p>
 					<p>
 						2. Việc Xử lý dữ liệu cá nhân của Khách hàng chỉ được thực hiện khi
@@ -156,7 +156,7 @@ const UserPolicy = () => {
 					</p>
 					<ul className="space-y-1 pl-2">
 						<li>
-							(a) Nội dung: Tiếp thị, giới thiệu sản phẩm quảng cáo của FIMI và
+							(a) Nội dung: Tiếp thị, giới thiệu sản phẩm quảng cáo của RUBY và
 							đối tác.
 						</li>
 						<li>
@@ -263,7 +263,7 @@ const UserPolicy = () => {
 						2. Cung cấp đầy đủ, trung thực, chính xác Dữ liệu cá nhân, các thông
 						tin khác khi đăng ký và sử dụng dịch vụ và cập nhật đầy đủ, chính
 						xác, trung thực khi có thay đổi về các thông tin này. Nếu có bất kỳ
-						thông tin sai lệch nào FIMI sẽ không chịu trách nhiệm trong trường
+						thông tin sai lệch nào RUBY sẽ không chịu trách nhiệm trong trường
 						hợp thông tin đó làm ảnh hưởng hoặc hạn chế quyền lợi của Khách
 						hàng. Trường hợp không thông báo, nếu có phát sinh rủi ro, tổn thất
 						thì Khách hàng chịu trách nhiệm về những sai sót hay hành vi lợi
@@ -293,7 +293,7 @@ const UserPolicy = () => {
 						6. Thường xuyên cập nhật các quy định, chính sách về xử lý Dữ liệu
 						cá nhân của trong từng thời kỳ được thông báo tới Khách hàng hoặc
 						đăng tải trên Kênh truyền thông. Thực hiện các hành động theo hướng
-						dẫn của FIMI để thể hiện rõ việc chấp thuận hoặc không chấp thuận
+						dẫn của RUBY để thể hiện rõ việc chấp thuận hoặc không chấp thuận
 						đối với các mục đích xử lý Dữ liệu cá nhân được thông báo tới Khách
 						hàng trong từng thời kỳ.
 					</p>
@@ -311,7 +311,7 @@ const UserPolicy = () => {
 					</p>
 					<p>
 						2. Sửa đổi Chính sách này theo từng thời kỳ và bảo đảm Khách hàng
-						được thông báo thông qua các Kênh truyền thông FIMI trước khi áp
+						được thông báo thông qua các Kênh truyền thông RUBY trước khi áp
 						dụng.
 					</p>
 					<p>
@@ -323,8 +323,8 @@ const UserPolicy = () => {
 					</p>
 					<p>
 						5. Trong phạm vi pháp luật cho phép, trường hợp Khách hàng có yêu
-						cầu rút lại sự đồng ý và/hoặc đề nghị FIMI hoặc các bên liên quan
-						xóa dữ liệu, hạn chế xử lý dữ liệu cá nhân của Khách hàng thì FIMI
+						cầu rút lại sự đồng ý và/hoặc đề nghị RUBY hoặc các bên liên quan
+						xóa dữ liệu, hạn chế xử lý dữ liệu cá nhân của Khách hàng thì RUBY
 						có quyền hạn chế, ngừng, hủy bỏ một phần hoặc toàn bộ việc cung cấp
 						sản phẩm, dịch vụ cho Khách hàng do không có đầy đủ các thông tin,
 						dữ liệu để thực hiện cung cấp các sản phẩm, dịch vụ cho Khách hàng;
@@ -428,10 +428,10 @@ const UserPolicy = () => {
 						nêu tại Chính sách này. Các vấn đề chưa được quy định, các Bên thống
 						nhất thực hiện theo quy định của pháp luật, hướng dẫn của cơ quan
 						Nhà nước có thẩm quyền và/hoặc các sửa đổi, bổ sung Chính sách này
-						được FIMI thông báo cho khách hàng trong từng thời kỳ.
+						được RUBY thông báo cho khách hàng trong từng thời kỳ.
 					</p>
 					<p>
-						3. Chính sách này được giao kết trên cơ sở thiện chí giữa FIMI và
+						3. Chính sách này được giao kết trên cơ sở thiện chí giữa RUBY và
 						Khách hàng. Trong quá trình thực hiện nếu phát sinh tranh chấp, các
 						Bên sẽ chủ động giải quyết trên cơ sở thương lượng trên tinh thần
 						các bên cùng có lợi. Trường hợp tranh chấp không giải quyết được,
@@ -447,12 +447,12 @@ const UserPolicy = () => {
 					</p>
 					<p>
 						5. Quý khách với vai trò là Chủ thể dữ liệu xác nhận đã được thông
-						báo và đồng ý cho phép FIMI & đối tác của FIMI, và có thể bao gồm cơ
+						báo và đồng ý cho phép RUBY & đối tác của RUBY, và có thể bao gồm cơ
 						quan nhà nước, các tổ chức cung cấp hệ thống CNTT liên quan khác,
 						được phép thu thập, xử lý, phân tích, lưu trữ, truyền đưa các dữ
-						liệu cá nhân cơ bản do Quý khách khai báo với FIMI để phục vụ cho
+						liệu cá nhân cơ bản do Quý khách khai báo với RUBY để phục vụ cho
 						mục đích đăng ký sử dụng các sản phẩm, dịch vụ tài chính, bảo hiểm,
-						hàng hóa và dịch vụ khác tại các đối tác của FIMI.
+						hàng hóa và dịch vụ khác tại các đối tác của RUBY.
 					</p>
 				</div>
 			</div>

@@ -104,7 +104,7 @@ const SecurityPolicy = () => {
 				</Button>
 			}
 		>
-			<div className="flex flex-col gap-2 text-xs">
+			<div className="flex flex-col gap-2 text-justify text-xs">
 				<p>
 					<span className="font-bold">
 						Công Ty TNHH Tiếp thị và Truyền thông RUBY
@@ -135,10 +135,10 @@ const SecurityPolicy = () => {
 				</p>
 				<div className="flex flex-col gap-2">
 					<p className="font-bold">Thông Báo Bảo Mật này giải thích:</p>
-					<ul className="list-disc space-y-1 px-2">
+					<ul className="space-y-1 px-2">
 						<li className="list-item list-inside">
 							- Loại dữ liệu cá nhân mà chúng tôi thu thập và cách thức mà chúng
-							tôi thu thập dữ liệu cá nhân
+							tôi thu thập dữ liệu cá nhân;
 						</li>
 						<li className="list-item">
 							- Cách thức chúng tôi xử lý dữ liệu cá nhân của Quý khách;
@@ -148,8 +148,11 @@ const SecurityPolicy = () => {
 						</li>
 						<li className="list-item">
 							- Các quyền và nghĩa vụ liên quan đến dữ liệu cá nhân mà chúng tôi
-							thu thập; và Các lựa chọn mà chúng tôi đề xuất, kể cả cách thức
-							truy cập và cập nhật dữ liệu cá nhân.
+							thu thập; và
+						</li>
+						<li>
+							- Các lựa chọn mà chúng tôi đề xuất, kể cả cách thức truy cập và
+							cập nhật dữ liệu cá nhân
 						</li>
 					</ul>
 					<p>
@@ -201,27 +204,27 @@ const SecurityPolicy = () => {
 						thập những dữ liệu này từ Quý khách khi Quý khách yêu cầu, hoặc
 						trong quá trình chúng tôi cung cấp cho Quý khách, bất kỳ sản phẩm và
 						dịch vụ nào của chúng tôi, và từ nhiều nguồn đa dạng, bao gồm nhưng
-						không giới hạn: (i) thông qua quan hệ giữa Quý khách và chúng tôi,
-						ví dụ thông tin mà Quý khách cung cấp trong các văn bản đăng ký hoặc
-						các tài liệu hỗ trợ giao dịch, khi Quý khách sử dụng các sản phẩm
-						hoặc dịch vụ của chúng tôi, khi tham gia các khảo sát, sự cạnh tranh
-						và chương trình khuyến mại dành cho khách hàng, và trong quá trình
-						đánh giá tài chính; (ii) thông qua liên hệ trao đổi bằng lời nói và
-						văn bản của Quý khách với chúng tôi và/ hoặc các đối tác hợp tác
-						kinh doanh của chúng tôi; (iii) từ các nhà cung cấp, bên cung cấp
-						dịch vụ, đối tác, thương nhân và các bên thứ ba, bao gồm nhưng không
-						giới hạn các bên tư vấn về khảo sát, truyền thông mạng xã hội, tiếp
-						thị, tham chiếu tín dụng, ngăn ngừa gian lận, tập hợp dữ liệu; bên
-						hỗ trợ cơ sở hạ tầng và phương tiện, và các bên thứ ba khác liên
-						quan đến hoạt động kinh doanh của chúng tôi; (iv) từ bất kỳ bên cung
-						cấp báo cáo tín dụng, bên cung cấp tham chiếu tín dụng và các cơ
-						quan thuộc chính phủ, hoặc thông tin thu thập từ bất kỳ nguồn công
-						cộng sẵn có, các hướng dẫn, hoặc cơ quan đăng ký nào; (v) từ hoạt
-						động phân tích Quý khách sử dụng và quản lý (các) tài khoản/ tiện
-						ích của Quý khách tại nền tảng của chúng tôi (bao gồm trang web
-						RUBY.tech và Ứng dụng RUBY), từ các giao dịch mà Quý khách thực hiện
-						và từ khoản thanh toán được thực hiện từ/ đến (các) tài khoản/ tiện
-						ích của Quý khách;
+						không giới hạn: <br /> (i) thông qua quan hệ giữa Quý khách và chúng
+						tôi, ví dụ thông tin mà Quý khách cung cấp trong các văn bản đăng ký
+						hoặc các tài liệu hỗ trợ giao dịch, khi Quý khách sử dụng các sản
+						phẩm hoặc dịch vụ của chúng tôi, khi tham gia các khảo sát, sự cạnh
+						tranh và chương trình khuyến mại dành cho khách hàng, và trong quá
+						trình đánh giá tài chính; <br /> (ii) thông qua liên hệ trao đổi
+						bằng lời nói và văn bản của Quý khách với chúng tôi và/ hoặc các đối
+						tác hợp tác kinh doanh của chúng tôi; <br /> (iii) từ các nhà cung
+						cấp, bên cung cấp dịch vụ, đối tác, thương nhân và các bên thứ ba,
+						bao gồm nhưng không giới hạn các bên tư vấn về khảo sát, truyền
+						thông mạng xã hội, tiếp thị, tham chiếu tín dụng, ngăn ngừa gian
+						lận, tập hợp dữ liệu; bên hỗ trợ cơ sở hạ tầng và phương tiện, và
+						các bên thứ ba khác liên quan đến hoạt động kinh doanh của chúng
+						tôi; <br /> (iv) từ bất kỳ bên cung cấp báo cáo tín dụng, bên cung
+						cấp tham chiếu tín dụng và các cơ quan thuộc chính phủ, hoặc thông
+						tin thu thập từ bất kỳ nguồn công cộng sẵn có, các hướng dẫn, hoặc
+						cơ quan đăng ký nào; <br /> (v) từ hoạt động phân tích Quý khách sử
+						dụng và quản lý (các) tài khoản/ tiện ích của Quý khách tại nền tảng
+						của chúng tôi (bao gồm trang web RUBY.tech và Ứng dụng RUBY), từ các
+						giao dịch mà Quý khách thực hiện và từ khoản thanh toán được thực
+						hiện từ/ đến (các) tài khoản/ tiện ích của Quý khách;
 					</p>
 					{info2.map((data, i) => (
 						<p key={i}>{data}</p>
