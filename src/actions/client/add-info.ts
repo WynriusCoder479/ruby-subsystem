@@ -30,7 +30,9 @@ export const addInfo = async (
 
 		const rest = value.splice(0, 4)
 
-		return [...rest, '', ...Object.values(client)]
+		const { fullname, ...restClient } = client
+
+		return [...rest, '', fullname.toUpperCase(), ...Object.values(restClient)]
 	})
 
 	await sheets.spreadsheets.values.update({
