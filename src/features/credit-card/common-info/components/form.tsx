@@ -111,7 +111,7 @@ const CommonInfoForm = () => {
 					<Button
 						type="submit"
 						className="mt-4 w-full"
-						disabled={!checked}
+						disabled={!checked || isPending}
 					>
 						Mở thẻ ngay
 					</Button>
