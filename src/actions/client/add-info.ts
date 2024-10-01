@@ -1,12 +1,15 @@
 'use server'
 
-import { format } from 'date-fns'
+import { redirect } from 'next/navigation'
 
+import { linkProduct } from '@/features/credit-card/common-info/constants/link.constant'
+import { CommonInfoSchema } from '@/features/credit-card/common-info/schemas/common-info.schema'
 import { getSheets } from '@/lib/google-sheets'
 
-export const addMoreData = async (
+export const addInfo = async (
 	uid: string,
-	timestamp: string | number,
+	client: CommonInfoSchema & { age: number },
+	publisherCode: string,
 	productCode: string
 ) => {
 	const sheets = await getSheets()
@@ -15,7 +18,7 @@ export const addMoreData = async (
 		data: { values }
 	} = await sheets.spreadsheets.values.get({
 		spreadsheetId: process.env.SHEET_ID,
-		range: 'DATA'
+		range: 'Client'
 	})
 
 	if (!values) {
@@ -25,23 +28,19 @@ export const addMoreData = async (
 	const data = [...values].map(value => {
 		if (value[0] !== uid) return value
 
-		const id = value[0]
-		const rest = value.slice(3)
+		const rest = value.splice(0, 4)
 
-		return [
-			id,
-			format(new Date(timestamp), 'QQQ E dd/LL/yyyy - hh:mm:ss bbb'),
-			productCode,
-			...rest
-		]
+		return [...rest, ...Object.values(client)]
 	})
 
 	await sheets.spreadsheets.values.update({
 		spreadsheetId: process.env.SHEET_ID,
-		range: 'DATA',
+		range: 'Client',
 		valueInputOption: 'USER_ENTERED',
 		requestBody: {
 			values: data
 		}
 	})
+
+	redirect(linkProduct(publisherCode, productCode))
 }

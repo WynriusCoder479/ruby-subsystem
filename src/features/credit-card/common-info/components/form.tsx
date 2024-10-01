@@ -2,10 +2,11 @@
 
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useMutation } from '@tanstack/react-query'
-import { useRouter } from 'next/navigation'
+import { useSearchParams } from 'next/navigation'
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 
+import { addInfo } from '@/actions/client/add-info'
 import { Button } from '@/components/ui/button'
 import { Checkbox } from '@/components/ui/checkbox'
 import { Form } from '@/components/ui/form'
@@ -19,8 +20,7 @@ import {
 	commonInfoSchema
 } from '@/features/credit-card/common-info/schemas/common-info.schema'
 import { calculateAge } from '@/lib/utils'
-import { useClient } from '@/stores/client.store'
-import { useReject } from '@/stores/reject.store'
+import { useUid } from '@/stores/uid.store'
 
 const CommonInfoForm = () => {
 	const form = useForm<CommonInfoSchema>({
@@ -34,32 +34,27 @@ const CommonInfoForm = () => {
 		}
 	})
 
+	const searchParams = useSearchParams()
+
 	const [checked, setChecked] = useState<boolean>(false)
 
-	const { client, setClient } = useClient()
-	const { setReject } = useReject()
-
-	const router = useRouter()
+	const { uid } = useUid()
 
 	const { mutate, isPending } = useMutation({
 		mutationFn: async (values: CommonInfoSchema) => {
 			const clientAge = calculateAge(values.dob as string)
+			const product = searchParams.get('product')
+			const code = searchParams.get('code')
 
-			if (clientAge < 18) throw Error('Invalid age')
-
-			return {
-				...values,
-				age: clientAge
-			}
-		},
-		onSuccess: data => {
-			setClient({ ...client, ...data })
-
-			router.push('/credit-card/income-and-demand')
-		},
-		onError: () => {
-			setReject(true)
-			router.push('/credit-card/non-qualified')
+			await addInfo(
+				uid,
+				{
+					age: clientAge,
+					...values
+				},
+				code ?? 'RUBY00001',
+				product ?? 'vpbankcc'
+			)
 		}
 	})
 
