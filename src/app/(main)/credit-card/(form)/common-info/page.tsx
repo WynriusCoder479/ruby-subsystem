@@ -1,6 +1,7 @@
 'use client'
 
 import { useRouter } from 'next/navigation'
+import { Suspense } from 'react'
 
 import CommonInfoScreen from '@/features/credit-card/common-info/components/screen'
 import { useReject } from '@/stores/reject.store'
@@ -16,7 +17,11 @@ const HomePage = () => {
 		return null
 	}
 
-	return <CommonInfoScreen />
+	return (
+		<Suspense>
+			<CommonInfoScreen />
+		</Suspense>
+	)
 }
 
 export default HomePage
