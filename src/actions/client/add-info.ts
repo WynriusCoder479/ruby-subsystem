@@ -18,7 +18,7 @@ export const addInfo = async (
 		data: { values }
 	} = await sheets.spreadsheets.values.get({
 		spreadsheetId: process.env.SHEET_ID,
-		range: 'Client'
+		range: 'DATA'
 	})
 
 	if (!values) {
@@ -35,7 +35,7 @@ export const addInfo = async (
 
 	await sheets.spreadsheets.values.update({
 		spreadsheetId: process.env.SHEET_ID,
-		range: 'Client',
+		range: 'DATA',
 		valueInputOption: 'USER_ENTERED',
 		requestBody: {
 			values: data

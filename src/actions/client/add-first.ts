@@ -16,7 +16,7 @@ export const createClient = async (
 
 	await sheets.spreadsheets.values.append({
 		spreadsheetId: process.env.SHEET_ID,
-		range: 'Client!A2:J1',
+		range: 'DATA!A2:J1',
 		valueInputOption: 'USER_ENTERED',
 		requestBody: {
 			values: [
