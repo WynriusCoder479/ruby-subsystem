@@ -1,7 +1,6 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 'use server'
 
-import { vi } from 'date-fns/locale'
 import { formatInTimeZone } from 'date-fns-tz'
 
 import { getSheets } from '@/lib/google-sheets'
@@ -26,10 +25,7 @@ export const createClient = async (
 					formatInTimeZone(
 						new Date(timestamp),
 						'Asia/Ho_Chi_Minh',
-						'QQQ E dd/LL/yyyy - hh:mm:ss bbb',
-						{
-							locale: vi
-						}
+						'QQQ E dd/LL/yyyy - hh:mm:ss bbb'
 					),
 					publisherCode,
 					productCode
