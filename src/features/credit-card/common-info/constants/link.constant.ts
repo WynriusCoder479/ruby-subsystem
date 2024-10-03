@@ -6,10 +6,10 @@ export const linkProduct = (code: string, type: string) => {
 			link = `https://cards.vpbank.com.vn/?utm_campaign=JarvisCustCC.Partner&utm_source=FiMi&utm_medium=${code}`
 			break
 		case 'hdbvjp':
-			link = `https://hdbank.page.link/?channel=dop&productcode=DOPPLX&utm_source=FIMI&utm_campaign=test&utm_channel=DOP&utm_ref=${code}&apn=com.vnpay.hdbank&isi=1461658565&ibi=com.vnpay.HDBank`
+			link = `https://hdbank.page.link/?link=https://hdbank.page.link/?channel%3Ddop%26productcode%3DDOPVJ%26utm_source%3DFIMI%26utm_campaign%3Dtest%26utm_channel%3DDOP%26utm_ref%3D${code}&apn=com.vnpay.hdbank&isi=1461658565&ibi=com.vnpay.HDBank`
 			break
 		case 'hdb4in1':
-			link = `https://hdbank.page.link/?channel=dop&productcode=DOPPLX&utm_source=FIMI&utm_campaign=test&utm_channel=DOP&utm_ref=${code}&apn=com.vnpay.hdbank&isi=1461658565&ibi=com.vnpay.HDBank`
+			link = `https://hdbank.page.link/?link=https://hdbank.page.link/?channel%3Ddop%26productcode%3DDOPPLX%26utm_source%3DFIMI%26utm_campaign%3Dtest%26utm_channel%3DDOP%26utm_ref%3D${code}&apn=com.vnpay.hdbank&isi=1461658565&ibi=com.vnpay.HDBank`
 			break
 		case 'tpbevo':
 			link = `https://evocard.tpb.vn/?utm_source=avay_afffimi&utm_campaign=First&utm_medium=${code}`
