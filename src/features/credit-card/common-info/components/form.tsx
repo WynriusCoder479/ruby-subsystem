@@ -2,8 +2,7 @@
 
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useMutation } from '@tanstack/react-query'
-import { useSearchParams } from 'next/navigation'
-import { useState } from 'react'
+import { FC, useState } from 'react'
 import { useForm } from 'react-hook-form'
 
 import { addInfo } from '@/actions/client/add-info'
@@ -18,9 +17,13 @@ import {
 	CommonInfoSchema,
 	commonInfoSchema
 } from '@/features/credit-card/common-info/schemas/common-info.schema'
-import { useUid } from '@/stores/uid.store'
 
-const CommonInfoForm = () => {
+interface CommonInfoFormProps {
+	code: string
+	product: string
+}
+
+const CommonInfoForm: FC<CommonInfoFormProps> = ({ code, product }) => {
 	const form = useForm<CommonInfoSchema>({
 		resolver: zodResolver(commonInfoSchema),
 		defaultValues: {
@@ -32,18 +35,11 @@ const CommonInfoForm = () => {
 		}
 	})
 
-	const searchParams = useSearchParams()
-
 	const [checked, setChecked] = useState<boolean>(false)
-
-	const { uid } = useUid()
 
 	const { mutate, isPending } = useMutation({
 		mutationFn: async (values: CommonInfoSchema) => {
-			const product = searchParams.get('product')
-			const code = searchParams.get('code')
-
-			await addInfo(uid, values, code ?? 'RUBY00001', product ?? 'vpbankcc')
+			await addInfo(values, code ?? 'RUBY00001', product ?? 'vpbankcc')
 		}
 	})
 
