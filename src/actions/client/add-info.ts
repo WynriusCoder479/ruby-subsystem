@@ -45,7 +45,7 @@ export const addInfo = async (
 					publisherCode,
 					productCode,
 					'',
-					client.fullname,
+					String(client.fullname).toUpperCase(),
 					'',
 					client.email,
 					client.phone,
