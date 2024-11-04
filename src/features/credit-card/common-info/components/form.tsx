@@ -40,6 +40,9 @@ const CommonInfoForm: FC<CommonInfoFormProps> = ({ code, product }) => {
 	const { mutate, isPending } = useMutation({
 		mutationFn: async (values: CommonInfoSchema) => {
 			await addInfo(values, code ?? 'RUBY00001', product ?? 'vpbankcc')
+		},
+		onSuccess: () => {
+			form.reset()
 		}
 	})
 
