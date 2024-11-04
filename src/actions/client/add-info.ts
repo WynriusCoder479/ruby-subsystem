@@ -25,11 +25,7 @@ export const addInfo = async (
 	// 	return [...rest, '', fullname.toUpperCase(), ...Object.values(restClient)]
 	// })
 
-	const timeStamp = formatInTimeZone(
-		new Date(),
-		'Asia/Ho_Chi_Minh',
-		'QQQ E LL/dd/yyyy - HH:mm:ss'
-	)
+	const timeStamp = formatInTimeZone(new Date(), 'Asia/Ho_Chi_Minh', 'LLL d,y')
 
 	const uid = generateRandomSubString(12)
 
@@ -44,9 +40,7 @@ export const addInfo = async (
 					timeStamp,
 					publisherCode,
 					productCode,
-					'',
 					String(client.fullname).toUpperCase(),
-					'',
 					`'${client.phone}`,
 					client.email,
 					client.city
