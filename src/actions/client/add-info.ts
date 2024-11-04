@@ -47,7 +47,7 @@ export const addInfo = async (
 					'',
 					String(client.fullname).toUpperCase(),
 					'',
-					`${client.phone}`,
+					`'${client.phone}`,
 					client.email,
 					client.city
 				]
