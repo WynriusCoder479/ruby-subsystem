@@ -49,5 +49,5 @@ export const addInfo = async (
 		}
 	})
 
-	redirect(linkProduct(publisherCode, productCode))
+	redirect(linkProduct(uid, productCode))
 }
